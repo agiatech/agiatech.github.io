@@ -4,111 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AGIA Tech | Inteligencia Artificial</title>
-  <style>
-    :root {
-      --bg-color: #ffffff;
-      --text-color: #1a1a1a;
-      --accent-color: #cccccc;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 2rem 4rem;
-      border-bottom: 1px solid var(--accent-color);
-    }
-
-    header h1 {
-      font-size: 2rem;
-      font-weight: 600;
-    }
-
-    nav {
-      margin-top: 1rem;
-    }
-
-    nav a {
-      margin-right: 1.5rem;
-      text-decoration: none;
-      color: var(--text-color);
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: gray;
-    }
-
-    main {
-      padding: 4rem;
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      border-left: 4px solid var(--accent-color);
-      padding-left: 1rem;
-    }
-
-    .about p,
-    .team p {
-      max-width: 800px;
-      margin-bottom: 1rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid var(--accent-color);
-      color: #888;
-      font-size: 0.9rem;
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <h1>AGIA Tech</h1>
-    <nav>
-      <a href="#about">Sobre Nosotros</a>
-      <a href="#team">Equipo</a>
-      <a href="#contact">Contacto</a>
-    </nav>
+<body class="bg-gray-50 text-gray-800 font-sans leading-normal">
+
+  <header class="bg-gradient-to-r from-blue-800 to-blue-500 border-b border-gray-200 py-6 px-8 text-white">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+        
+      <div>
+        <h1 class="text-3xl font-bold mb-2">AGIA Tech</h1>
+        <p class="text-lg">Inteligencia Artificial para el futuro.</p>
+      </div>
+      <nav class="mt-4 md:mt-0">
+        <a href="#about" class="text-white hover:text-blue-200 mr-4">Sobre Nosotros</a>
+        <a href="#team" class="text-white hover:text-blue-200 mr-4">Equipo</a>
+        <a href="#contact" class="text-white hover:text-blue-200">Contacto</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="about" class="about">
-      <h2>Sobre Nosotros</h2>
-      <p>
+  <main class="container mx-auto py-12 px-8">
+    <section id="about" class="mb-12">
+      <h2 class="text-3xl font-bold mb-4 border-l-4 border-blue-500 pl-4 text-blue-800">Sobre Nosotros</h2>
+      <p class="max-w-2xl mb-4">
         En AGIA Tech nos especializamos en el desarrollo de soluciones innovadoras en Inteligencia Artificial. Nuestra misión es ayudar a empresas a transformar sus procesos y mejorar su eficiencia mediante el poder de la IA.
       </p>
-      <p>
+      <p class="max-w-2xl">
         Desde modelos predictivos hasta sistemas de aprendizaje automático personalizados, creamos tecnología que se adapta a tus necesidades.
       </p>
     </section>
 
-    <section id="team" class="team">
-      <h2>Nuestro Equipo</h2>
-      <p><strong>Guillem Rico</strong> – </p>
-      <p><strong>Adrián Lara</strong> – </p>
-      <p><strong>Albert Clivillé</strong> – </p>
+    <section id="team" class="mb-12">
+      <h2 class="text-3xl font-bold mb-4 border-l-4 border-blue-500 pl-4 text-blue-800">Nuestro Equipo</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-md p-4">
+          
+          <p class="font-semibold text-center">Guillem Rico</p>
+          <p class="text-gray-100 text-center"></p>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4">
+          
+          <p class="font-semibold text-center">Adrián Lara</p>
+          <p class="text-gray-50 text-center"></p>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-4">
+          
+          <p class="font-semibold text-center">Albert Clivillé</p>
+          <p class="text-gray-100 text-center"></p>
+     </section>
+
+  <section id="contact">
+      <h2 class="text-3xl font-bold mb-4 border-l-4 border-blue-500 pl-4 text-blue-800">Contacto</h2>
+      <form class="max-w-lg">
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nombre:</label>
+          <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Tu nombre">
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Tu correo electrónico">
+        </div>
+         <div class="mb-4">
+          <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Mensaje:</label>
+          <textarea id="message" name="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Tu mensaje"></textarea>
+        </div>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Enviar</button>
+      </form>
     </section>
 
-    <section id="contact" class="contact">
-      <h2>Contacto</h2>
-      <p><strong>Correo: agia.reus@gmail.com</strong> – </p>
+<!-- Widget Configuration -->
+<script>
+    window.ChatWidgetConfig = {
+        webhook: {
+            url: '<https://n8n.srv810015.hstgr.cloud/webhook/cab89a31-2279-49cc-9d29-c620fa41d7a0/chat>',
+            route: 'general'
+        },
+        branding: {
+            
+            name: 'AGIA', // AGIA Tech
+            welcomeText: 'Hola 👋, com puc ajudar-te?', //Welcome message
+            responseTimeText: 'Paciencia' //Response time message
+        },
+        style: {
+            primaryColor: '#854fff', //Primary color
+            secondaryColor: '#6b3fd4', //Secondary color
+            position: 'right', //Position of the widget (left or right)
+            backgroundColor: '#ffffff', //Background color of the chat widget
+            fontColor: '#333333' //Text color for messages and interface
+        }
+    };
+</script>
+<script src="https://nocodeveloper.com/chat.js"></script>
+<!-- Widget Script -->
+ 
+ </main>
 
+  <footer class="bg-white border-t border-gray-200 py-4 px-8 text-center text-gray-600 text-sm">
+    &copy; 2025 AGIA Tech. Todos los derechos reservados.
+  </footer>
