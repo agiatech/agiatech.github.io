@@ -5,123 +5,239 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AGIA Tech | Inteligencia Artificial</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* Colores personalizados para un toque más profesional y lila */
-    .bg-gradient-to-r-purple {
-        background-image: linear-gradient(to right, #6B46C1, #805AD5); /* Morado oscuro a morado más claro */
+    /* Option 1: Elegància Tecnològica (Adaptada al Logo - Blues i Grisos) */
+    :root {
+      --primary-color: #1a202c; /* Carbó fosc / Negre molt suau */
+      --secondary-color: #2b6cb0; /* Blau corporatiu profund (semblant al logo) */
+      --accent-color: #3182ce; /* Blau vibrant per accents */
+      --logo-green: #38A169; /* Verd del logo per a elements de contrast */
+      --light-accent-color: #90cdf4; /* Blau cel clar per hovers */
+      --text-heading-color: #2c5282; /* Blau fosc per títols */
+      --bg-section-light: #edf2f7; /* Gris molt clar / blanc trencat */
+      --button-hover-dark: #2a4365; /* Blau fosc intens per hover de botons */
+      --shadow-color: rgba(43, 108, 176, 0.2); /* Ombra amb tint blau */
     }
-    .text-purple-800 {
-        color: #553C9A; /* Morado oscuro para encabezados */
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      scroll-behavior: smooth;
+      background-color: var(--bg-section-light);
     }
-    .border-purple-500 {
-        border-color: #805AD5; /* Morado medio para bordes */
+
+    /* General Shadows & Transitions */
+    .shadow-soft {
+        box-shadow: 0 10px 30px var(--shadow-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .hover\:text-purple-200:hover {
-        color: #B794F4; /* Morado claro al pasar el ratón */
+    .shadow-soft:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(43, 108, 176, 0.3);
     }
-    .bg-purple-500 {
-        background-color: #805AD5; /* Morado medio para botones */
+
+    /* Specific Styles */
+    .bg-gradient-header {
+        background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     }
-    .hover\:bg-purple-700:hover {
-        background-color: #6B46C1; /* Morado oscuro al pasar el ratón por botones */
+
+    .text-deep-color {
+        color: var(--text-heading-color);
     }
-    .bg-section-light {
-        background-color: #FBF8FF; /* Lila muy claro para diferenciar secciones */
+
+    .border-accent-color {
+        border-color: var(--accent-color);
+    }
+    .border-logo-green {
+        border-color: var(--logo-green);
+    }
+
+    .hover\:text-accent-light:hover {
+        color: var(--light-accent-color);
+    }
+
+    .bg-button-color {
+        background-color: var(--secondary-color);
+    }
+    .bg-button-logo-green {
+        background-color: var(--logo-green);
+    }
+    .hover\:bg-button-dark:hover {
+        background-color: var(--button-hover-dark);
+    }
+    .hover\:bg-logo-green-dark:hover {
+        background-color: #276749;
+    }
+
+    .bg-section-custom {
+        background-color: #FFFFFF;
+    }
+
+    /* Form specific styles for extra roundness and depth */
+    .input-field {
+        border-radius: 1.5rem;
+        padding: 0.85rem 1.25rem;
+        border: 1px solid #E5E7EB;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+        transition: all 0.3s ease;
+    }
+
+    .input-field:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 4px rgba(49, 130, 206, 0.2);
+    }
+
+    /* Scroll-to-top button */
+    #scrollToTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        z-index: 100;
+        border: none;
+        outline: none;
+        background-color: var(--secondary-color);
+        color: white;
+        cursor: pointer;
+        padding: 15px 18px;
+        border-radius: 50%;
+        font-size: 20px;
+        line-height: 1;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+        transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    #scrollToTopBtn:hover {
+        background-color: var(--button-hover-dark);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    }
+    /* Logo styling for header */
+    .header-logo {
+        height: 120px; /* ¡MUCHO MÁS GRANDE! */
+        width: auto;
+        border-radius: 20px; /* Un poco más de redondeo con el tamaño */
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* Ombra més pronunciada */
+    }
+    /* Ajuste para que el logo y el texto no se superpongan en móviles */
+    @media (max-width: 768px) {
+        .header-logo {
+            height: 90px; /* Un poco más pequeño en móviles para no ocupar tanto espacio */
+        }
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans leading-normal">
+<body class="text-gray-800 antialiased">
 
-  <header class="bg-gradient-to-r-purple py-6 px-8 text-white shadow-lg">
+  <header class="bg-gradient-header py-7 px-8 text-white shadow-soft">
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-      <div>
-        <h1 class="text-3xl font-bold mb-2">AGIA Tech</h1>
-        <p class="text-lg">Soluciones inteligentes para tu empresa.</p>
+      <div class="flex flex-col md:flex-row items-center mb-4 md:mb-0">
+        <img src="logo_AGIA.jpeg" alt="AGIA Tech Logo" class="header-logo mr-0 md:mr-4 mb-4 md:mb-0">
+        <div class="text-center md:text-left">
+          <h1 class="text-4xl lg:text-5xl font-bold mb-1">AGIA Tech</h1>
+          <p class="text-lg lg:text-xl opacity-90 tracking-wide text-gray-200">AI · AUTOMATION · TECHNOLOGY · CONSULTING</p>
+        </div>
       </div>
-      <nav class="mt-4 md:mt-0">
-        <a href="#about" class="text-white hover:text-purple-200 mr-6 text-lg transition duration-300 ease-in-out">Sobre Nosotros</a>
-        <a href="#team" class="text-white hover:text-purple-200 mr-6 text-lg transition duration-300 ease-in-out">Equipo</a>
-        <a href="#contact" class="text-white hover:text-purple-200 text-lg transition duration-300 ease-in-out">Contacto</a>
+      <nav class="mt-8 md:mt-0">
+        <a href="#about" class="block md:inline-block text-white hover:text-accent-light mr-8 text-lg font-medium transition duration-300 ease-in-out py-2 md:py-0">Sobre Nosotros</a>
+        <a href="#team" class="block md:inline-block text-white hover:text-accent-light mr-8 text-lg font-medium transition duration-300 ease-in-out py-2 md:py-0">Equipo</a>
+        <a href="#contact" class="block md:inline-block text-white hover:text-accent-light text-lg font-medium transition duration-300 ease-in-out py-2 md:py-0">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <main class="container mx-auto py-12 px-8">
-    <section id="about" class="mb-16 py-8 bg-section-light rounded-lg shadow-md">
-      <h2 class="text-3xl font-bold mb-6 border-l-4 border-purple-500 pl-4 text-purple-800">Sobre Nosotros</h2>
-      <p class="max-w-2xl mb-4 text-gray-700 text-lg leading-relaxed">
+  <main class="container mx-auto py-20 px-8">
+    <section id="about" class="mb-24 py-12 px-10 bg-section-custom rounded-3xl shadow-soft">
+      <h2 class="text-4xl lg:text-5xl font-bold mb-10 border-l-8 border-logo-green pl-8 text-deep-color leading-tight">Sobre Nosotros</h2>
+      <p class="max-w-4xl mb-6 text-gray-700 text-xl lg:text-2xl leading-relaxed px-2">
         En **AGIA Tech** nos especializamos en el desarrollo de soluciones innovadoras en **Inteligencia Artificial**. Nuestra misión es ayudar a empresas a transformar sus procesos y mejorar su eficiencia mediante el poder de la IA.
       </p>
-      <p class="max-w-2xl text-gray-700 text-lg leading-relaxed">
+      <p class="max-w-4xl text-gray-700 text-xl lg:text-2xl leading-relaxed px-2">
         Desde modelos predictivos hasta sistemas de aprendizaje automático personalizados, creamos tecnología que se adapta a tus necesidades, impulsando el crecimiento y la toma de decisiones estratégicas.
       </p>
     </section>
 
-    <section id="team" class="mb-16 py-8">
-      <h2 class="text-3xl font-bold mb-8 border-l-4 border-purple-500 pl-4 text-purple-800">Nuestro Equipo</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-        <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
-          <img src="https://via.placeholder.com/120/805AD5/FFFFFF?text=Guillem" alt="Guillem Rico" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-purple-300 shadow-md">
-          <p class="font-semibold text-xl text-purple-800 text-center">Guillem Rico</p>
-          <p class="text-gray-600 text-center text-md">Director Ejecutivo</p>
+    <section id="team" class="mb-24 py-12">
+      <h2 class="text-4xl lg:text-5xl font-bold mb-12 border-l-8 border-logo-green pl-8 text-deep-color leading-tight">Nuestro Equipo</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
+        <div class="bg-section-custom rounded-3xl shadow-soft p-10 flex flex-col items-center">
+          <img src="https://via.placeholder.com/180/2b6cb0/FFFFFF?text=Guillem" alt="Guillem Rico" class="w-40 h-40 rounded-full object-cover mb-6 border-6 border-accent-color shadow-lg">
+          <p class="font-semibold text-2xl text-deep-color text-center mb-2">Guillem Rico</p>
+          <p class="text-gray-600 text-center text-lg">Director Ejecutivo</p>
         </div>
-        <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
-          <img src="https://via.placeholder.com/120/805AD5/FFFFFF?text=Adrian" alt="Adrián Lara" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-purple-300 shadow-md">
-          <p class="font-semibold text-xl text-purple-800 text-center">Adrián Lara</p>
-          <p class="text-gray-600 text-center text-md">Jefe de Ingeniería</p>
+        <div class="bg-section-custom rounded-3xl shadow-soft p-10 flex flex-col items-center">
+          <img src="https://via.placeholder.com/180/2b6cb0/FFFFFF?text=Adrian" alt="Adrián Lara" class="w-40 h-40 rounded-full object-cover mb-6 border-6 border-accent-color shadow-lg">
+          <p class="font-semibold text-2xl text-deep-color text-center mb-2">Adrián Lara</p>
+          <p class="text-gray-600 text-center text-lg">Jefe de Ingeniería</p>
         </div>
-        <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
-          <img src="https://via.placeholder.com/120/805AD5/FFFFFF?text=Albert" alt="Albert Clivillé" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-purple-300 shadow-md">
-          <p class="font-semibold text-xl text-purple-800 text-center">Albert Clivillé</p>
-          <p class="text-gray-600 text-center text-md">Científico de Datos</p>
+        <div class="bg-section-custom rounded-3xl shadow-soft p-10 flex flex-col items-center">
+          <img src="https://via.placeholder.com/180/2b6cb0/FFFFFF?text=Albert" alt="Albert Clivillé" class="w-40 h-40 rounded-full object-cover mb-6 border-6 border-accent-color shadow-lg">
+          <p class="font-semibold text-2xl text-deep-color text-center mb-2">Albert Clivillé</p>
+          <p class="text-gray-600 text-center text-lg">Científico de Datos</p>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="py-8 bg-section-light rounded-lg shadow-md">
-      <h2 class="text-3xl font-bold mb-6 border-l-4 border-purple-500 pl-4 text-purple-800">Contacto</h2>
-      <form class="max-w-lg mx-auto p-8 bg-white rounded-lg shadow-xl">
-        <div class="mb-6">
-          <label for="name" class="block text-gray-700 text-md font-bold mb-2">Nombre:</label>
-          <input type="text" id="name" name="name" class="shadow-sm appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Tu nombre completo">
+    <section id="contact" class="py-12 px-10 bg-section-custom rounded-3xl shadow-soft">
+      <h2 class="text-4xl lg:text-5xl font-bold mb-10 border-l-8 border-logo-green pl-8 text-deep-color leading-tight">Contacto</h2>
+      <form class="max-w-3xl mx-auto p-12 bg-white rounded-3xl shadow-soft">
+        <div class="mb-8">
+          <label for="name" class="block text-gray-700 text-xl font-bold mb-3">Nombre:</label>
+          <input type="text" id="name" name="name" class="input-field w-full text-gray-700" placeholder="Tu nombre completo" required>
         </div>
-        <div class="mb-6">
-          <label for="email" class="block text-gray-700 text-md font-bold mb-2">Correo Electrónico:</label>
-          <input type="email" id="email" name="email" class="shadow-sm appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="tu.email@ejemplo.com">
+        <div class="mb-8">
+          <label for="email" class="block text-gray-700 text-xl font-bold mb-3">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" class="input-field w-full text-gray-700" placeholder="tu.email@ejemplo.com" required>
         </div>
-         <div class="mb-6">
-          <label for="message" class="block text-gray-700 text-md font-bold mb-2">Mensaje:</label>
-          <textarea id="message" name="message" rows="5" class="shadow-sm appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Escribe tu mensaje aquí..."></textarea>
+        <div class="mb-10">
+          <label for="message" class="block text-gray-700 text-xl font-bold mb-3">Mensaje:</label>
+          <textarea id="message" name="message" rows="7" class="input-field w-full text-gray-700 resize-y" placeholder="Escribe tu mensaje aquí..." required></textarea>
         </div>
-        <button type="submit" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out w-full">Enviar Mensaje</button>
+        <button type="submit" class="bg-button-color hover:bg-button-dark text-white font-bold py-4 px-10 rounded-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out w-full text-xl transform hover:scale-105 shadow-md">Enviar Mensaje</button>
       </form>
     </section>
   </main>
 
-  <footer class="bg-gradient-to-r-purple py-6 px-8 text-center text-white text-sm shadow-inner">
+  <footer class="bg-gradient-header py-8 px-8 text-center text-white text-md shadow-inner">
     &copy; 2025 AGIA Tech. Todos los derechos reservados.
   </footer>
 
+  <button id="scrollToTopBtn" title="Ir arriba">↑</button>
+
   <script>
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    };
+    scrollToTopBtn.addEventListener('click', function() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+
     window.ChatWidgetConfig = {
-        webhook: {
-            url: 'https://n8n.srv810015.hstgr.cloud/webhook/cab89a31-2279-49cc-9d29-c620fa41d7a0/chat',
-            route: 'general'
-        },
-        branding: {
-            name: 'AGIA', // AGIA Tech
-            welcomeText: 'Hola 👋, ¿cómo puedo ayudarte?', // Welcome message
-            responseTimeText: 'Paciencia' // Response time message
-        },
-        style: {
-            primaryColor: '#854fff', // Primary color
-            secondaryColor: '#6b3fd4', // Secondary color
-            position: 'right', // Position of the widget (left or right)
-            backgroundColor: '#ffffff', // Background color of the chat widget
-            fontColor: '#333333' // Text color for messages and interface
-        }
+      webhook: {
+        url: 'https://n8n.srv810015.hstgr.cloud/webhook/cab89a31-2279-49cc-9d29-c620fa41d7a0/chat',
+        route: 'general'
+      },
+      branding: {
+        name: 'AGIA',
+        welcomeText: 'Hola 👋, ¿cómo puedo ayudarte?',
+        responseTimeText: 'Paciencia'
+      },
+      style: {
+        primaryColor: '#2b6cb0',
+        secondaryColor: '#3182ce',
+        position: 'right',
+        backgroundColor: '#ffffff',
+        fontColor: '#333333'
+      }
     };
   </script>
   <script src="https://nocodeveloper.com/chat.js"></script>
-  </body>
+</body>
 </html>
