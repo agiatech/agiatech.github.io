@@ -1,241 +1,251 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AGIA Tech | Inteligencia Artificial</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    /* Option 1: Elegància Tecnològica (Adaptada al Logo - Blues i Grisos) */
-    :root {
-      --primary-color: #1a202c; /* Carbó fosc / Negre molt suau */
-      --secondary-color: #2b6cb0; /* Blau corporatiu profund (semblant al logo) */
-      --accent-color: #3182ce; /* Blau vibrant per accents */
-      --logo-green: #38A169; /* Verd del logo per a elements de contrast */
-      --light-accent-color: #90cdf4; /* Blau cel clar per hovers */
-      --text-heading-color: #2c5282; /* Blau fosc per títols */
-      --bg-section-light: #edf2f7; /* Gris molt clar / blanc trencat */
-      --button-hover-dark: #2a4365; /* Blau fosc intens per hover de botons */
-      --shadow-color: rgba(43, 108, 176, 0.2); /* Ombra amb tint blau */
-    }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      scroll-behavior: smooth;
-      background-color: var(--bg-section-light);
-    }
-
-    /* General Shadows & Transitions */
-    .shadow-soft {
-        box-shadow: 0 10px 30px var(--shadow-color);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .shadow-soft:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(43, 108, 176, 0.3);
-    }
-
-    /* Specific Styles */
-    .bg-gradient-header {
-        background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    }
-
-    .text-deep-color {
-        color: var(--text-heading-color);
-    }
-
-    .border-accent-color {
-        border-color: var(--accent-color);
-    }
-    .border-logo-green {
-        border-color: var(--logo-green);
-    }
-
-    .hover\:text-accent-light:hover {
-        color: var(--light-accent-color);
-    }
-
-    .bg-button-color {
-        background-color: var(--secondary-color);
-    }
-    .bg-button-logo-green {
-        background-color: var(--logo-green);
-    }
-    .hover\:bg-button-dark:hover {
-        background-color: var(--button-hover-dark);
-    }
-    .hover\:bg-logo-green-dark:hover {
-        background-color: #276749;
-    }
-
-    .bg-section-custom {
-        background-color: #FFFFFF;
-    }
-
-    /* Form specific styles for extra roundness and depth */
-    .input-field {
-        border-radius: 1.5rem;
-        padding: 0.85rem 1.25rem;
-        border: 1px solid #E5E7EB;
-        box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
-        transition: all 0.3s ease;
-    }
-
-    .input-field:focus {
-        outline: none;
-        border-color: var(--accent-color);
-        box-shadow: 0 0 0 4px rgba(49, 130, 206, 0.2);
-    }
-
-    /* Scroll-to-top button */
-    #scrollToTopBtn {
-        display: none;
-        position: fixed;
-        bottom: 25px;
-        right: 25px;
-        z-index: 100;
-        border: none;
-        outline: none;
-        background-color: var(--secondary-color);
-        color: white;
-        cursor: pointer;
-        padding: 15px 18px;
-        border-radius: 50%;
-        font-size: 20px;
-        line-height: 1;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-        transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    }
-
-    #scrollToTopBtn:hover {
-        background-color: var(--button-hover-dark);
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-    }
-    /* Logo styling for header */
-    .header-logo {
-        height: 120px; /* ¡MUCHO MÁS GRANDE! */
-        width: auto;
-        border-radius: 20px; /* Un poco más de redondeo con el tamaño */
-        box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* Ombra més pronunciada */
-    }
-    /* Ajuste para que el logo y el texto no se superpongan en móviles */
-    @media (max-width: 768px) {
-        .header-logo {
-            height: 90px; /* Un poco más pequeño en móviles para no ocupar tanto espacio */
-        }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agia Tech - Liderando la Revolución de la IA</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Librería de Animaciones (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Hoja de Estilos CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="text-gray-800 antialiased">
+<body>
 
-  <header class="bg-gradient-header py-7 px-8 text-white shadow-soft">
-    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-      <div class="flex flex-col md:flex-row items-center mb-4 md:mb-0">
-        <img src="logo_AGIA.jpeg" alt="AGIA Tech Logo" class="header-logo mr-0 md:mr-4 mb-4 md:mb-0">
-        <div class="text-center md:text-left">
-          <h1 class="text-4xl lg:text-5xl font-bold mb-1">AGIA Tech</h1>
-          <p class="text-lg lg:text-xl opacity-90 tracking-wide text-gray-200">AI · AUTOMATION · TECHNOLOGY · CONSULTING</p>
+    <!-- Header y Navegación -->
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">
+				<img src="logo.png" alt="Logo de Agia Tech">
+			</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto" class="btn btn-primary">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
-      <nav class="mt-8 md:mt-0">
-        <a href="#about" class="block md:inline-block text-white hover:text-accent-light mr-8 text-lg font-medium transition duration-300 ease-in-out py-2 md:py-0">Sobre Nosotros</a>
-        <a href="#team" class="block md:inline-block text-white hover:text-accent-light mr-8 text-lg font-medium transition duration-300 ease-in-out py-2 md:py-0">Equipo</a>
-        <a href="#contact" class="block md:inline-block text-white hover:text-accent-light text-lg font-medium transition duration-300 ease-in-out py-2 md:py-0">Contacto</a>
-      </nav>
+    </header>
+
+    <main>
+        <!-- Sección Hero -->
+        <section id="hero">
+            <div class="container hero-content">
+                <h1 data-aos="fade-up">Construimos el futuro con <br><span class="typing-effect"></span></h1>
+                <p class="subtitle" data-aos="fade-up" data-aos-delay="200">Soluciones de Inteligencia Artificial que transforman industrias, optimizan procesos e impulsan el crecimiento de tu negocio.</p>
+                <a href="#proyectos" class="btn btn-secondary" data-aos="fade-up" data-aos-delay="400">Ver nuestros casos de éxito</a>
+            </div>
+            <div class="hero-bg"></div>
+        </section>
+
+        <!-- Sección Servicios -->
+        <section id="servicios">
+            <div class="container">
+                <h2 data-aos="fade-up">Nuestras Capacidades en IA</h2>
+                <div class="servicios-grid">
+                    <!-- Tarjeta 1: Automatización a Medida -->
+                    <div class="servicio-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon">[🤖]</div>
+                        <h3>Automatizaciones a Medida</h3>
+                        <p>Analizamos tus procesos de negocio y creamos soluciones de IA para automatizar tareas, aumentar la eficiencia y reducir costes.</p>
+                    </div>
+                    <!-- Tarjeta 2: Agentes de Voz -->
+                    <div class="servicio-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon">[🗣️]</div>
+                        <h3>Agentes de Voz con IA</h3>
+                        <p>Desarrollamos asistentes de voz inteligentes capaces de gestionar llamadas y ofrecer una atención al cliente 24/7 de forma natural y fluida.</p>
+                    </div>
+                    <!-- Tarjeta 3: Chatbots Inteligentes -->
+                    <div class="servicio-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon">[💬]</div>
+                        <h3>Chatbots Inteligentes</h3>
+                        <p>Creamos chatbots para tu web que interactúan con tus visitantes, capturan leads y resuelven dudas al instante, mejorando la experiencia.</p>
+                    </div>
+                    <!-- Tarjeta 4: Agentes para WhatsApp y Telegram -->
+                    <div class="servicio-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon">[📱]</div>
+                        <h3>Agentes para WhatsApp & Telegram</h3>
+                        <p>Llevamos la conversación a las apps que tus clientes ya usan. Agentes para marketing, soporte y capturar leads.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Proyectos -->
+        <section id="proyectos">
+            <div class="container">
+                <h2 data-aos="fade-up">Proyectos Destacados</h2>
+                <div class="proyectos-grid">
+               <!-- Proyecto 1 -->
+<div class="proyecto-card" data-aos="zoom-in">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200" alt="Proyecto 1">
+    <div class="proyecto-info">
+        <h3>OptiStock para Retail</h3>
+        <p>Optimización de inventario usando IA, reduciendo costes un 20%.</p>
     </div>
-  </header>
+</div>
+                    <!-- Proyecto 2 -->
+                    <div class="proyecto-card" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200" alt="Proyecto 2">
+                        <div class="proyecto-info">
+                            <h3>Sentinel Visión para Industria</h3>
+                            <p>Detección de defectos en tiempo real en líneas de producción.</p>
+                        </div>
+                    </div>
+                    <!-- Proyecto 3 -->
+                    <div class="proyecto-card" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200" alt="Proyecto 3">
+                        <div class="proyecto-info">
+                            <h3>Chatbot Cognitivo para Finanzas</h3>
+                            <p>Asistente virtual que resuelve el 85% de las consultas de clientes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <main class="container mx-auto py-20 px-8">
-    <section id="about" class="mb-24 py-12 px-10 bg-section-custom rounded-3xl shadow-soft">
-      <h2 class="text-4xl lg:text-5xl font-bold mb-10 border-l-8 border-logo-green pl-8 text-deep-color leading-tight">Sobre Nosotros</h2>
-      <p class="max-w-4xl mb-6 text-gray-700 text-xl lg:text-2xl leading-relaxed px-2">
-        En **AGIA Tech** nos especializamos en el desarrollo de soluciones innovadoras en **Inteligencia Artificial**. Nuestra misión es ayudar a empresas a transformar sus procesos y mejorar su eficiencia mediante el poder de la IA.
-      </p>
-      <p class="max-w-4xl text-gray-700 text-xl lg:text-2xl leading-relaxed px-2">
-        Desde modelos predictivos hasta sistemas de aprendizaje automático personalizados, creamos tecnología que se adapta a tus necesidades, impulsando el crecimiento y la toma de decisiones estratégicas.
-      </p>
-    </section>
-
- <section id="team" class="mb-24 py-12">
-  <h2 class="text-4xl lg:text-5xl font-bold mb-12 border-l-8 border-logo-green pl-8 text-deep-color leading-tight">Nuestro Equipo</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
-    <div class="bg-section-custom rounded-3xl shadow-soft p-10 flex flex-col items-center">
-      <img src="Guillem.jpg" alt="Guillem Rico" class="w-40 h-40 rounded-full object-cover mb-6 border-6 border-accent-color shadow-lg">
-      <p class="font-semibold text-2xl text-deep-color text-center mb-2">Guillem Rico</p>
-      <p class="text-gray-600 text-center text-lg"></p> </div>
-    <div class="bg-section-custom rounded-3xl shadow-soft p-10 flex flex-col items-center">
-      <img src="adri.jpg" alt="Adrián Lara" class="w-40 h-40 rounded-full object-cover mb-6 border-6 border-accent-color shadow-lg">
-      <p class="font-semibold text-2xl text-deep-color text-center mb-2">Adrián Lara</p>
-      <p class="text-gray-600 text-center text-lg"></p> </div>
-    <div class="bg-section-custom rounded-3xl shadow-soft p-10 flex flex-col items-center">
-      <img src="albert1.jpg" alt="Albert Clivillé" class="w-40 h-40 rounded-full object-cover mb-6 border-6 border-accent-color shadow-lg">
-      <p class="font-semibold text-2xl text-deep-color text-center mb-2">Albert Clivillé</p>
-      <p class="text-gray-600 text-center text-lg"></p> </div>
-  </div>
+ <!-- Sección Sobre Nosotros -->
+<section id="nosotros">
+    <div class="container nosotros-flex">
+        <div class="nosotros-texto" data-aos="fade-right">
+            <h2>Innovación en nuestro ADN</h2>
+            <p>En Agia Tech, somos un equipo de ingenieros, científicos de datos y visionarios apasionados por resolver problemas complejos a través de la Inteligencia Artificial. Nuestra misión es democratizar el acceso a tecnologías de vanguardia, permitiendo que empresas de todos los tamaños compitan en la nueva era digital.</p>
+            <p>Creemos en la colaboración, la ética y la excelencia técnica como pilares para construir un futuro más inteligente y eficiente para todos.</p>
+        </div>
+        <div class="nosotros-img" data-aos="fade-left">
+            <div class="img-container">
+                <img src="Guillem.jpg" alt="Equipo de Agia Tech 1" class="foto">
+                <img src="adri.jpg" alt="Equipo de Agia Tech 2" class="foto">
+                <img src="albert1.jpg" alt="Equipo de Agia Tech 3" class="foto">
+            </div>
+        </div>
+    </div>
 </section>
 
-    <section id="contact" class="py-12 px-10 bg-section-custom rounded-3xl shadow-soft">
-      <h2 class="text-4xl lg:text-5xl font-bold mb-10 border-l-8 border-logo-green pl-8 text-deep-color leading-tight">Contacto</h2>
-      <form class="max-w-3xl mx-auto p-12 bg-white rounded-3xl shadow-soft">
-        <div class="mb-8">
-          <label for="name" class="block text-gray-700 text-xl font-bold mb-3">Nombre:</label>
-          <input type="text" id="name" name="name" class="input-field w-full text-gray-700" placeholder="Tu nombre completo" required>
+<style>
+    .nosotros-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .nosotros-texto {
+        flex: 1;
+        padding-right: 20px;
+    }
+
+    .nosotros-texto h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #2c5282;
+    }
+
+    .nosotros-texto p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #4a5568;
+        margin-bottom: 15px;
+    }
+
+    .nosotros-img {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .img-container {
+        display: flex;
+        gap: 20px;
+    }
+
+    .foto {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        .nosotros-flex {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .nosotros-texto {
+            padding-right: 0;
+            margin-bottom: 20px;
+        }
+
+        .img-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .foto {
+            width: 150px;
+            height: 150px;
+        }
+    }
+</style>
+
+        <!-- Sección Contacto -->
+        <section id="contacto">
+            <div class="container" data-aos="fade-up">
+                <h2>Hablemos de tu próximo proyecto</h2>
+                <p>¿Listo para llevar tu empresa al siguiente nivel con IA? Contáctanos.</p>
+                <form class="contact-form">
+                    <input type="text" placeholder="Tu Nombre" required>
+                    <input type="email" placeholder="Tu Email" required>
+                    <textarea placeholder="Cuéntanos sobre tu idea" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-secondary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2025 Agia Tech. Todos los derechos reservados.</p>
         </div>
-        <div class="mb-8">
-          <label for="email" class="block text-gray-700 text-xl font-bold mb-3">Correo Electrónico:</label>
-          <input type="email" id="email" name="email" class="input-field w-full text-gray-700" placeholder="tu.email@ejemplo.com" required>
-        </div>
-        <div class="mb-10">
-          <label for="message" class="block text-gray-700 text-xl font-bold mb-3">Mensaje:</label>
-          <textarea id="message" name="message" rows="7" class="input-field w-full text-gray-700 resize-y" placeholder="Escribe tu mensaje aquí..." required></textarea>
-        </div>
-        <button type="submit" class="bg-button-color hover:bg-button-dark text-white font-bold py-4 px-10 rounded-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out w-full text-xl transform hover:scale-105 shadow-md">Enviar Mensaje</button>
-      </form>
-    </section>
-  </main>
+    </footer>
 
-  <footer class="bg-gradient-header py-8 px-8 text-center text-white text-md shadow-inner">
-    &copy; 2025 AGIA Tech. Todos los derechos reservados.
-  </footer>
-
-  <button id="scrollToTopBtn" title="Ir arriba">↑</button>
-
-  <script>
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    window.onscroll = function() {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        scrollToTopBtn.style.display = "block";
-      } else {
-        scrollToTopBtn.style.display = "none";
-      }
-    };
-    scrollToTopBtn.addEventListener('click', function() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    });
-
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
+	<script>
     window.ChatWidgetConfig = {
-      webhook: {
-        url: 'https://n8n.srv810015.hstgr.cloud/webhook/cab89a31-2279-49cc-9d29-c620fa41d7a0/chat',
-        route: 'general'
-      },
-      branding: {
-	logo:'https://i.pinimg.com/originals/0c/67/5a/0c675a8e1061478d2b7b21b330093444.gif',
-        name: 'AGIA',
-        welcomeText: 'Hola 👋, ¿cómo puedo ayudarte?',
-        responseTimeText: ''
-      },
-      style: {
-        primaryColor: '#2b6cb0',
-        secondaryColor: '#3182ce',
-        position: 'right',
-        backgroundColor: '#ffffff',
-        fontColor: '#333333'
-      }
+        webhook: {
+            url: 'https://n8n.srv810015.hstgr.cloud/webhook/cab89a31-2279-49cc-9d29-c620fa41d7a0/chat',
+            route: 'general'
+        },
+        branding: {
+            name: 'AGIA', // AGIA Tech
+            welcomeText: 'Hola 👋, ¿cómo puedo ayudarte?', // Welcome message
+            responseTimeText: '' // Response time message
+        },
+        style: {
+            primaryColor: '#854fff', // Primary color
+            secondaryColor: '#6b3fd4', // Secondary color
+            position: 'right', // Position of the widget (left or right)
+            backgroundColor: '#ffffff', // Background color of the chat widget
+            fontColor: '#333333' // Text color for messages and interface
+        }
     };
   </script>
-  <script src="https://nocodeveloper.com/chat.js"></script>
+  <script src="chat.js"></script>
 </body>
 </html>
