@@ -106,7 +106,7 @@ section {
 }
 
 .logo img {
-    height: 60px; /* <-- ¡AJUSTA ESTE VALOR A TU GUSTO! */
+    height: 80px; /* <-- ¡AJUSTA ESTE VALOR A TU GUSTO! */
     width: auto;  /* Mantiene la proporción del logo */
     display: block; /* Evita espacios extra debajo de la imagen */
     object-fit: cover;
