@@ -110,7 +110,7 @@ section {
     width: auto;  /* Mantiene la proporción del logo */
     display: block; /* Evita espacios extra debajo de la imagen */
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 10%;
 }
 
 .main-nav ul {
